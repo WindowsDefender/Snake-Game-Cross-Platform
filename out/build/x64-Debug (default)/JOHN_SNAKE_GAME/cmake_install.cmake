@@ -1,8 +1,8 @@
-# Install script for directory: C:/Repos/CMakeProject1/JOHN_SNAKE_GAME
+# Install script for directory: C:/Users/johnh/source/repos/Snake-Game-Cross-Platform/JOHN_SNAKE_GAME
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Repos/CMakeProject1/out/install/x64-Debug (default)")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/johnh/Source/Repos/Snake-Game-Cross-Platform/out/install/x64-Debug (default)")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

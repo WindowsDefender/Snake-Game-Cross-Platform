@@ -53,7 +53,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "JOHN_SNAKE_GAME::@15c1ba57abcd43cc433a",
-					"jsonFile" : "target-JOHN_SNAKE_GAME-Debug-ffe49730f6cb4c027c82.json",
+					"jsonFile" : "target-JOHN_SNAKE_GAME-Debug-2ae2f3721f1cb7942457.json",
 					"name" : "JOHN_SNAKE_GAME",
 					"projectIndex" : 0
 				}
@@ -63,12 +63,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Repos/CMakeProject1/out/build/x64-Debug (default)",
-		"source" : "C:/Repos/CMakeProject1"
+		"build" : "C:/Users/johnh/source/repos/Snake-Game-Cross-Platform/out/build/x64-Debug (default)",
+		"source" : "C:/Users/johnh/source/repos/Snake-Game-Cross-Platform"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 1
+		"minor" : 0
 	}
 }

@@ -163,23 +163,23 @@ int main(void)
 
                         switch (input)
                         {
-                        case 'w':
-                            dir = up;
-                            break;
-                        case 'a':
-                            dir = left;
-                            break;
-                        case 's':
-                            dir = down;
-                            break;
-                        case 'd':
-                            dir = right;
-                            break;
-                        case 'p':
-                        {
-                            gamestate = stopped;
-                            break;
-                        }
+                            case 'w':
+                                dir = up;
+                                break;
+                            case 'a':
+                                dir = left;
+                                break;
+                            case 's':
+                                dir = down;
+                                break;
+                            case 'd':
+                                dir = right;
+                                break;
+                            case 'p':
+                            {
+                                gamestate = stopped;
+                                break;
+                            }
                         }
                         //if the user chooses to end the game, then exit the while loop
                         if (gamestate == end || gamestate == stopped) break;
@@ -227,7 +227,8 @@ int main(void)
             case end:
             {
                 printf("Ended\n\r");
-                printf("Score: %d\n\r", snek->getScore());
+                if (snek->getScore() > 8)
+                    printf("Score: %d\n\r", snek->getScore());
                 return 0;
             }
         }
