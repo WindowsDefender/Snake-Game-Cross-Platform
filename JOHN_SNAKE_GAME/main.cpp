@@ -35,7 +35,6 @@ void printgamename()
 
 stateT controlsMenu()
 {
-    clrScreen(120);
     printf("************** Controls **************\n\r");
     printf("             UP:     w\n\r");
     printf("             DOWN:   s\n\r");
@@ -114,7 +113,7 @@ int main(void)
 {
     stateT gamestate = start;
     long int x = 500;
-    Snake* Fred_The_Snake = new Snake(8);
+    Snake* snek = new Snake(8);
     std::chrono::steady_clock::time_point nowTime = std::chrono::steady_clock::now();
     std::chrono::steady_clock::time_point previousTime = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed;
@@ -125,112 +124,112 @@ int main(void)
     {
         switch (gamestate)
         {
-        case start:
-        {
-            if (gamecount > 0) Fred_The_Snake = new Snake(8);
-            comp = (std::chrono::duration<double>) 0.2;
-            gamestate = initGame();
-            system("cls");
-            gamecount = 1;
-            break;
-        }
-
-        case controls:
-        {
-            gamestate = controlsMenu();
-            break;
-        }
-
-        case pregame:
-        {
-            Fred_The_Snake->testprint();
-            Fred_The_Snake->createApple();
-            Fred_The_Snake->print();
-            gamestate = ingame;
-            break;
-        }
-        case ingame:
-        {
-            while (!Fred_The_Snake->CollidedIntoWall())
+            case start:
             {
-                nowTime = std::chrono::steady_clock::now();
-                elapsed = nowTime - previousTime;
-                char input;
-
-                if (_kbhit())
-                {
-                    directionT dir = right;
-                    input = _getch();
-
-                    switch (input)
-                    {
-                    case 'w':
-                        dir = up;
-                        break;
-                    case 'a':
-                        dir = left;
-                        break;
-                    case 's':
-                        dir = down;
-                        break;
-                    case 'd':
-                        dir = right;
-                        break;
-                    case 'p':
-                    {
-                        gamestate = stopped;
-                        break;
-                    }
-                    }
-                    //if the user chooses to end the game, then exit the while loop
-                    if (gamestate == end || gamestate == stopped) break;
-                    Fred_The_Snake->changeDirection(dir);
-                }
-                if (elapsed >= comp)
-                {
-                    Fred_The_Snake->move();
-                    Fred_The_Snake->print();
-                    if (Fred_The_Snake->AteApple())
-                    {
-                        Fred_The_Snake->grow();
-                        Fred_The_Snake->createApple();
-                        if (comp > (std::chrono::duration<double>)0.1)
-                            comp = (std::chrono::duration<double>) (comp * 0.9);
-                    }
-                    Fred_The_Snake->gotoxy(0, 30);
-                    printf("\n\r");
-                    printf("head   %d    %d\n\r", Fred_The_Snake->head.x, Fred_The_Snake->head.y);
-                    printf("apple  %d    %d\n\r", Fred_The_Snake->apple.x, Fred_The_Snake->apple.y);
-                    printf("length %d\n\r", (int)Fred_The_Snake->snake_body_vector->size());
-                    previousTime = nowTime;
-                }
+                if (gamecount > 0) snek = new Snake(8);
+                comp = (std::chrono::duration<double>) 0.2;
+                gamestate = initGame();
+                system("cls");
+                gamecount = 1;
+                break;
             }
-            if (gamestate != end && gamestate != stopped)
+
+            case controls:
             {
-                clrScreen(120);
-                printf("Snake died\n\r");
-                printf("Score: %d\n\r", Fred_The_Snake->getScore());
-                gamestate = start;
+                gamestate = controlsMenu();
+                break;
             }
-            break;
-        }
 
-        case stopped:
-        {
-            Fred_The_Snake->gotoxy(0, 34);
-            gamestate = initPauseScreen();
-            Fred_The_Snake->gotoxy(0, 34);
-            printf("                                                      \n\r");
-            printf("                                                  \n\r");
-            printf("                                               \n\r");
-            break;
-        }
-        case end:
-        {
-            printf("Ended\n\r");
-            printf("Score: %d\n\r", Fred_The_Snake->getScore());
-            return 0;
-        }
+            case pregame:
+            {
+                snek->testprint();
+                snek->createApple();
+                snek->print();
+                gamestate = ingame;
+                break;
+            }
+            case ingame:
+            {
+                while (!snek->CollidedIntoWall())
+                {
+                    nowTime = std::chrono::steady_clock::now();
+                    elapsed = nowTime - previousTime;
+                    char input;
+
+                    if (_kbhit())
+                    {
+                        directionT dir = right;
+                        input = _getch();
+
+                        switch (input)
+                        {
+                        case 'w':
+                            dir = up;
+                            break;
+                        case 'a':
+                            dir = left;
+                            break;
+                        case 's':
+                            dir = down;
+                            break;
+                        case 'd':
+                            dir = right;
+                            break;
+                        case 'p':
+                        {
+                            gamestate = stopped;
+                            break;
+                        }
+                        }
+                        //if the user chooses to end the game, then exit the while loop
+                        if (gamestate == end || gamestate == stopped) break;
+                        snek->changeDirection(dir);
+                    }
+                    if (elapsed >= comp)
+                    {
+                        snek->move();
+                        snek->print();
+                        if (snek->AteApple())
+                        {
+                            snek->grow();
+                            snek->createApple();
+                            if (comp > (std::chrono::duration<double>)0.1)
+                                comp = (std::chrono::duration<double>) (comp * 0.9);
+                        }
+                        snek->gotoxy(0, 30);
+                        printf("\n\r");
+                        printf("head   %d    %d\n\r", snek->head.x, snek->head.y);
+                        printf("apple  %d    %d\n\r", snek->apple.x, snek->apple.y);
+                        printf("length %d\n\r", (int)snek->snake_body_vector->size());
+                        previousTime = nowTime;
+                    }
+                }
+                if (gamestate != end && gamestate != stopped)
+                {
+                    clrScreen(120);
+                    printf("Snake died\n\r");
+                    printf("Score: %d\n\r", snek->getScore());
+                    gamestate = start;
+                }
+                break;
+            }
+
+            case stopped:
+            {
+                snek->gotoxy(0, 34);
+                gamestate = initPauseScreen();
+                snek->gotoxy(0, 34);
+                printf("                                                      \n\r");
+                printf("                                                  \n\r");
+                printf("                                               \n\r");
+                break;
+            }
+            case end:
+            {
+                printf("Ended\n\r");
+                printf("Score: %d\n\r", snek->getScore());
+                return 0;
+            }
         }
     }
     printf("Game Error: Halt\n\r");
