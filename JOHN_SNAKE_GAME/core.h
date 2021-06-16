@@ -15,4 +15,8 @@
 #include <iostream>
 #include <Windows.h>
 
+//types for specifying which direction the snake is heading and in which state (NFA model) the game is in
+typedef enum directionT { up = 0, down, left, right };
+typedef enum stateT { start = 0, pregame, controls, ingame, stopped, end } stateT;
+
 #endif // !_CORE_H_

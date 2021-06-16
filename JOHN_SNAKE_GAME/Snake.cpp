@@ -4,7 +4,7 @@ int gridsize = 30;
 int upper = gridsize - 4;
 int lower = 4;
 
-void Snake::gotoxy(int x, int y)
+void Snake::gotoxy(const int& x, const int& y)
 {
     COORD coord;
     coord.X = x;
@@ -21,7 +21,7 @@ void ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(Current_Console, &cursorInfo);
 }
 
-Snake::Snake(int length)
+Snake::Snake(const int& length)
 {
     int i;
     bool first = true;

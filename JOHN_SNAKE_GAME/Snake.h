@@ -3,14 +3,11 @@
 
 #include "cdT.h"
 
-typedef enum directionT { up=0, down, left, right } directionT;
-typedef enum stateT { start=0, pregame, controls, ingame, stopped, end } stateT;
-
 class Snake
 {
 private:
 public:
-    Snake(int);
+    Snake(const int&);
     directionT direction;
     cdT head;
     std::vector<cdT*>* snake_body_vector;
@@ -24,7 +21,7 @@ public:
     void print();
     int getScore();
     void testprint();
-    void gotoxy(int, int);
+    void gotoxy(const int&, const int&);
 };
 
 #endif
