@@ -1,2 +1,4 @@
 #include "cdT.h"
-cdT::cdT() {};
+cdT::cdT():
+	x(0),
+	y(0){};

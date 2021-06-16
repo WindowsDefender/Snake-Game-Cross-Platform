@@ -5,7 +5,7 @@
 
 int gamecount = 0;
 
-void clrScreen(int stuff)
+void clrScreen(const int& stuff)
 {
     printf("Press q to quit\n");
     for (int i = 0; i < stuff; i++)

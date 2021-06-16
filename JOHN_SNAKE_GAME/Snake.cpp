@@ -170,14 +170,6 @@ void Snake::grow()
 void Snake::print()
 {
     ShowConsoleCursor(false);
-
-
-
-    int i = 0;//column
-    int j = 0;//row
-    int v = 0;//index of the vector
-    bool found;//flag for body of the snake
-
     for (int i = 0; i < (int)this->snake_body_vector->size(); i++)
     {
         gotoxy(this->snake_body_vector->at(i)->x * 2 - 1, this->snake_body_vector->at(i)->y);
@@ -188,17 +180,4 @@ void Snake::print()
 int Snake::getScore()
 {
     return (int)this->snake_body_vector->size();
-}
-
-
-void Snake::testprint()
-{
-    for (int i = 1; i < gridsize - 1; i++)
-    {
-        for (int j = 1; j < gridsize - 1; j++)
-        {
-            gotoxy(i * 2 - 1, j);
-            printf("-");
-        }
-    }
 }

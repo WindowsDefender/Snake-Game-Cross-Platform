@@ -3,8 +3,8 @@
 
 #include "cdT.h"
 
-typedef enum { up, down, left, right } directionT;
-typedef enum { start, pregame, controls, ingame, stopped, end } stateT;
+typedef enum directionT { up=0, down, left, right } directionT;
+typedef enum stateT { start=0, pregame, controls, ingame, stopped, end } stateT;
 
 class Snake
 {
@@ -23,7 +23,6 @@ public:
     void changeDirection(directionT);
     void print();
     int getScore();
-    void testprint();
     void gotoxy(int, int);
 };
 
