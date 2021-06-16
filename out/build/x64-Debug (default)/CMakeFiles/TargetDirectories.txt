@@ -1,0 +1,5 @@
+C:/Repos/CMakeProject1/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/Repos/CMakeProject1/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir
+C:/Repos/CMakeProject1/out/build/x64-Debug (default)/JOHN_SNAKE_GAME/CMakeFiles/JOHN_SNAKE_GAME.dir
+C:/Repos/CMakeProject1/out/build/x64-Debug (default)/JOHN_SNAKE_GAME/CMakeFiles/edit_cache.dir
+C:/Repos/CMakeProject1/out/build/x64-Debug (default)/JOHN_SNAKE_GAME/CMakeFiles/rebuild_cache.dir
