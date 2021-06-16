@@ -181,3 +181,16 @@ int Snake::getScore()
 {
     return (int)this->snake_body_vector->size();
 }
+
+
+void Snake::testprint()
+{
+    for (int i = 1; i < gridsize - 1; i++)
+    {
+        for (int j = 1; j < gridsize - 1; j++)
+        {
+            gotoxy(i * 2 - 1, j);
+            printf("-");
+        }
+    }
+}

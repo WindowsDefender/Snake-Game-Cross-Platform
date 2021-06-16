@@ -23,6 +23,7 @@ public:
     void changeDirection(directionT);
     void print();
     int getScore();
+    void testprint();
     void gotoxy(int, int);
 };
 
